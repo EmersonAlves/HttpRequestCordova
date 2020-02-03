@@ -1,9 +1,9 @@
 {
-  "name": "br.com.fabrica704.widgetfloat",
+  "name": "cordova-http-request-json",
   "version": "1.0.0",
   "description": "create floating widget native.",
   "cordova": {
-    "id": "br.com.fabrica704.widgetfloat",
+    "id": "cordova-http-request-json",
     "platforms": [
       "android"
     ]
