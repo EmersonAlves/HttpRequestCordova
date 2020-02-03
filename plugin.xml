@@ -24,7 +24,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
 
-        <source-file src="src/android/FloatingWidget.java" target-dir="src/br/com/fabrica704/widgetfloat" />
+        <source-file src="src/android/HttpRequestCordova.java" target-dir="src/br/com/fabrica704/http" />
     </platform>
 
 </plugin>
