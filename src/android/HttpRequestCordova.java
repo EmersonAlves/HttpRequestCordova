@@ -24,6 +24,8 @@ import java.util.Map;
 
 public class HttpRequestCordova extends CordovaPlugin {
 
+    private RequestQueue requestQueue;
+
     @Override
     public boolean execute(String action, JSONArray args,
                            CallbackContext callbackContext) throws JSONException {
@@ -58,7 +60,8 @@ public class HttpRequestCordova extends CordovaPlugin {
                 headers.put(key, objectHeaders.getString(key));
             }
 
-            RequestQueue requestQueue = Volley.newRequestQueue(cordova.getContext());
+            if (requestQueue == null)
+                requestQueue = Volley.newRequestQueue(cordova.getContext());
 
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override
@@ -112,8 +115,8 @@ public class HttpRequestCordova extends CordovaPlugin {
 
             final String requestBody = objectData.toString();
 
-
-            RequestQueue requestQueue = Volley.newRequestQueue(cordova.getContext());
+            if (requestQueue == null)
+                requestQueue = Volley.newRequestQueue(cordova.getContext());
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
